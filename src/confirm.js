@@ -19,8 +19,10 @@ var VueConfirm = Vue.directive('confirm', {
         if (binding.value.data != null && binding.value.data != '') {
           data = binding.value.data;
         }
+        
+        let method = binding.value.method !== undefined ? binding.value.method : 'post';
 
-        axios.post(binding.value.link, data).then(response => {
+        axios[method](binding.value.link, data).then(response => {
           if (binding.modifiers.reload && binding.modifiers.reload === true) {
             location.reload();
           } else {
