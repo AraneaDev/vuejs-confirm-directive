@@ -34,7 +34,7 @@ require('vuejs-confirm-directive');
 }"></button>
 ```
 
-### Example 2 - get confirmation, send post data and handle the callback
+### Example 2 - get confirmation, send data and handle the callback
 ```
 <button v-confirm="{
     link: 'your-url-comes-here',
@@ -61,7 +61,8 @@ Below is a list of attributes that you can send and what that does.
 | ----- | ---- | -------- | ------- |
 | link | String | required | any valid url
 | message | String | required | custom message
-| data | Object | optional | payload to the post url
+| data | Object | optional | payload to the url
+| method | String | optional | method to use, defaults to post
 | callback | function | optional | function or name of function
 
 **NOTE:** When the reload modifier is not provided, a callback function is
